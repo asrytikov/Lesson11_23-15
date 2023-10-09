@@ -1,13 +1,17 @@
-package p1;
+package p2;
 
-public class Client<T> implements Clientable<T>{
+import p1.Clientable;
+
+public class Client<T extends Integer, S> {
 
     private T id;
-    private String name;
+    private S name;
+    private int money;
 
-    public Client(T id, String name) {
+    public Client(T id, S name, int money) {
         this.id = id;
         this.name = name;
+        this.money = money;
     }
 
     public T getId() {
@@ -18,11 +22,19 @@ public class Client<T> implements Clientable<T>{
         this.id = id;
     }
 
-    public String getName() {
+    public S getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(S name) {
         this.name = name;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 }
